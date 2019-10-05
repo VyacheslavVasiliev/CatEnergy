@@ -19,7 +19,7 @@ const isProd = !isDev;
 const isSync = process.argv.includes("--sync");
 
 function clear() {
-  return del("./build/**");
+  return isDev? del(["./build/*.css","./build/index.html","./build/**/*.js"]): del("./build/**");
 }
 
 function styles() {
@@ -107,8 +107,9 @@ function svgCSS(){ // создает спрайты для встравиван�
         render: {
           css: {
             render: {
-                css: true // создание css файла с описание расположения каждого спрайта
-            }
+                css: true, // создание css файла с описание расположения каждого спрайта
+                less: {dest: '_sprite.less'}
+              }
           }
         }
       }
