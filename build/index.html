@@ -7,23 +7,23 @@
     <link rel="stylesheet" href="./style.css">
     <title>Cat Energy</title>
   </head>
-  <body>
+  <body class="main">
     <header class="header">
       <nav class="main-navigation container">
-        <a class="logo main-navigation__logo">
+        <a href="/" class="logo main-navigation__logo">
           <img class="main-navigation__image-logo" width="173px" height="58px" src="./image/content-SVG/logo-tablet.svg"></img>
           <span class="main-navigation__caption-logo"><b>Cat</b> Energy </span>
         </a>
         <button class="toggler toggler--close main-navigation__toggler">Переключатель</button>
         <ul class="main-navigation__list">
           <li class="main-navigation__item">
-            <a class="main-navigation__link">Главная</a>
+            <a class="main-navigation__link main-navigation__link--main">Главная</a>
           </li>
           <li class="main-navigation__item">
-            <a href="#" class="main-navigation__link">Каталог продукции</a>
+            <a href="#" class="main-navigation__link main-navigation__link--main">Каталог продукции</a>
           </li>
           <li class="main-navigation__item">
-            <a href="#" class="main-navigation__link">Подбор программы</a>
+            <a href="./product_selection.html" class="main-navigation__link main-navigation__link--main">Подбор программы</a>
           </li>
         </ul>
       </nav>
@@ -277,6 +277,7 @@
         
       </section>
       <section class="contacts">
+        <h2 class="visually-hidden">Наши контакты</h2>
         <div class="contacts__welcome container">
           <p class="contacts__contribution"
             >Приглашаем <br />

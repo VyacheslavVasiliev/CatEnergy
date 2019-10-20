@@ -46,7 +46,7 @@ function fonts(){
 }
 
 function html() {
-  return src("./src/index.html")
+  return src("./src/**/*.html")
     .pipe(gulpif(isProd, htmlmin({ collapseWhitespace: true }))) // минификация html без удаления пробелов внутри тегов
     .pipe(dest("./build/"))
     .pipe(gulpif(isSync, browserSync.stream()));
@@ -142,7 +142,7 @@ function watcher() {
     });
 
   watch("./src/**/*.{less,css}", styles);
-  watch("./src/index.html", html);
+  watch("./src/**/*.html", html);
   watch("./src/**/*.js", js);
   watch(["./src/image/**/*.{png,jpg}","./src/image/content-SVG/*.svg"], picture)
   watch("./src/image/spriteSVG/*.svg", svgInlineSprite)
