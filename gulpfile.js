@@ -12,6 +12,11 @@ const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
 const svgSprite = require('gulp-svg-sprite');
+const merge = require('merge-stream');
+const buffer = require('vinyl-buffer'); 
+const spritesmith = require('gulp.spritesmith');
+const babel = require("gulp-babel");
+const uglify = require('gulp-uglify');
 
 
 const isDev = process.argv.includes("--dev");
@@ -52,23 +57,40 @@ function html() {
     .pipe(gulpif(isSync, browserSync.stream()));
 }
 
-function js() {
-  return src("./src/**/*.js")
-    .pipe(dest("./build/"));
+function compilingJs(){
+  return src("./src/scripts/compilingJs/*.js")
+    .pipe(babel({
+      presets: [
+        '@babel/preset-env'
+      ]
+    }))
+    .pipe(gulpif(isProd, uglify()))
+    .pipe(dest("./build/scripts"));
 }
 
+function js() {
+  return src(["./src/scripts/**/*.js",
+              "./node_modules/babel-polyfill/dist/polyfill.min.js", // руками напрямую добавил полифил, ибо не использовал сборщика понимающего модули
+              "!src/scripts/compilingJs/**"])
+    .pipe(gulpif(isProd, uglify()))
+    .pipe(dest("./build/scripts"));
+}
+
+
 function picture(){
-  return src(["./src/image/**/*.{png,jpg}","./src/image/content-SVG/*.svg"], { base:"./src/image/" })
+  return src(["./src/image/**/*.{png,jpg}","./src/image/content-SVG/*.svg", "!src/image/spriteIMG/**"], { base:"./src/image/" })
     .pipe(imagemin([
       imagemin.jpegtran({progressive: true}), // Прогрессивное отображение jpg
       imagemin.optipng({optimizationLevel: 3}),
-      imagemin.svgo()
+      imagemin.svgo({plugins: [{
+          removeViewBox: false
+        }]})
   ]))
     .pipe(dest("./build/image"))
 }
 
 function webpPicture(){
-  return src("./src/image/content-picture/**/*")
+  return src("./src/image/content-picture/**/*", { base:"./src/image/content-picture/" })
     .pipe( webp({quality:90}))
     .pipe(dest("./build/image/content-picture/"))
 }
@@ -83,11 +105,13 @@ function svgInlineSprite(){ // создает спрайты для встави
       }
     }
   }
-//   {plugins: [{ // эти натойки настройки вставляются как атрибуты ф-ции svgo()
-//     removeAttrs: {
-//       attrs: 'path:fill' // удаляет всe fill атрибуты внутри path
-//     }
-// }]}
+
+  // эти натойки настройки вставляются как атрибуты ф-ции svgo()
+  //   {plugins: [{ 
+  //     removeAttrs: {
+  //       attrs: 'path:fill' // удаляет всe fill атрибуты внутри path
+  //     }
+  // }]}
 
   return src("./src/image/spriteSVG/*.svg")
     .pipe(imagemin([
@@ -134,6 +158,31 @@ function svgCSS(){ // создает спрайты для встравиван�
     .pipe(dest("./build/image/css"))
 }
 
+function imgSprite(){ // создает спрайты из jpg и png картинок
+  const spriteData = src("./src/image/spriteIMG/**/*.{png,jpg}")
+                      .pipe(spritesmith({
+                        imgName: 'sprite.png',
+                        imgPath : "./image/spriteIMG/sprite.png", // устанавливает относительный путь к спрайту в less файле с миксинами
+                        cssName: 'sprite.less',
+                        algorithm: 'binary-tree',
+                        retinaSrcFilter: './src/image/spriteIMG/retina/**/*@2x.{png,jpg}',
+                        retinaImgName: 'sprite@2x.png',
+                        retinaImgPath: './image/spriteIMG/sprite@2x.png',
+                      }));
+
+  const spriteDataImg = spriteData.img
+                              .pipe(buffer()) // Без буфера не работает минификация
+                              .pipe(imagemin([
+                                imagemin.jpegtran({progressive: true}),
+                                imagemin.optipng({optimizationLevel: 3})
+                              ]))
+                              .pipe(dest("./build/image/spriteIMG/"));
+
+  const spriteDataCss = spriteData.css.pipe(dest("./src/styles/blocks"));
+
+  return merge(spriteDataImg, spriteDataCss)
+}
+
 function watcher() {
   isSync && browserSync.init({
       server: {
@@ -143,12 +192,15 @@ function watcher() {
 
   watch("./src/**/*.{less,css}", styles);
   watch("./src/**/*.html", html);
-  watch("./src/**/*.js", js);
-  watch(["./src/image/**/*.{png,jpg}","./src/image/content-SVG/*.svg"], picture)
+  watch(["./src/scripts/**/*.js","!src/scripts/compilingJs/**"], js);
+  watch("./src/scripts/compilingJs/*.js", compilingJs);
+  watch(["./src/image/**/*.{png,jpg}","./src/image/content-SVG/*.svg", "!src/spriteIMG/**"], picture)
   watch("./src/image/spriteSVG/*.svg", svgInlineSprite)
+  watch("./src/image/spriteIMG/*.{png,jpg}", imgSprite)
   watch("./src/image/CSS/*.svg", svgCSS)
 }
 
-exports.build = series(clear, parallel(styles, html, picture, js, webpPicture, svgInlineSprite, svgCSS, fonts));
-exports.watch = series(clear, parallel(styles, html, js), watcher);
-exports.preflight = series(clear, parallel(styles, html, js, picture, webpPicture, svgInlineSprite, svgCSS, fonts,));
+exports.build = series(clear, parallel(styles, html, picture, js, compilingJs, webpPicture, svgInlineSprite, svgCSS, fonts));
+exports.watch = series(clear, parallel(styles, html, js, compilingJs), watcher);
+exports.preflight = series(clear, parallel(styles, html, js, compilingJs, picture, webpPicture, svgInlineSprite, svgCSS, fonts,imgSprite));
+exports.test = js;
