@@ -5,14 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./style.css">
+    <script src="./scripts/polyfill.min.js"></script>
+    <script src="./scripts/svg4everybody.min.js"></script>
+    <script src="./scripts/picturefill.min.js"></script>
+    <script src="./scripts/script.js" defer></script>
     <title>Cat Energy</title>
   </head>
   <body class="selection">
     <header class="header">
       <nav class="main-navigation container">
         <a href="/" class="logo main-navigation__logo">
-          <img class="main-navigation__image-logo" width="173px" height="58px" src="./image/content-SVG/logo-tablet.svg"></img>
-          <span class="main-navigation__caption-logo"><b>Cat</b> Energy </span>
+          <picture class="main-navigation__image-wrapper">
+            <source
+              type="image/svg+xml"
+              media="(min-width:1300px)"
+              srcset="./image/content-SVG/logo-desktop.svg"
+              alt="Логотип магазина Cat Energy"
+              class="main-navigation__image-logo"
+            />
+            <source
+              type="image/svg+xml"
+              media="(min-width:768px)"
+              srcset="./image/content-SVG/logo-tablet.svg"
+              alt="Логотип магазина Cat Energy"
+              class="main-navigation__image-logo"
+            />
+            <source
+              type="image/svg+xml"
+              media="(min-width:320px)"
+              srcset="./image/content-SVG/logo-mobile.svg"
+              alt="Логотип магазина Cat Energy"
+              class="main-navigation__image-logo"
+            />
+            <img
+              media="(min-width:320px)"
+              srcset="./image/content-SVG/logo-mobile.svg"
+              alt="Логотип магазина Cat Energy"
+              class="main-navigation__image-logo"
+            />
+          </picture>
+          <img src="./image/content-SVG/logo-mobile-header.svg" alt="Cat Energy" class="main-navigation__caption-logo">
         </a>
         <button class="toggler toggler--close main-navigation__toggler">Переключатель</button>
         <ul class="main-navigation__list">
@@ -20,7 +52,7 @@
             <a href="/" class="main-navigation__link main-navigation__link--selection">Главная</a>
           </li>
           <li class="main-navigation__item">
-            <a href="#" class="main-navigation__link main-navigation__link--selection">Каталог продукции</a>
+            <a href="./catalog.html" class="main-navigation__link main-navigation__link--selection">Каталог продукции</a>
           </li>
           <li class="main-navigation__item">
             <a class="main-navigation__link main-navigation__link--selection">Подбор программы</a>
@@ -63,33 +95,33 @@
                           section__container--user-purpose 
                           form__user-purpose">
                 <legend class="visually-hidden">Выберите цель, которую хочет добиться ваш котик</legend>
-                <label for="purpose__losing-weight" class="form__input-wrapper form__input-wrapper--radio">
+                <label for="purpose__losing-weight" class="form__input-wrapper form__input-wrapper--radio input__wrapper--radio">
                   <input type="radio" 
                         id="purpose__losing-weight" 
                         name="purpose" value="Похудение" 
                         class="input__radio">
                   <span class="input input--radio"></span>
-                  <span class="form__desc form__desc--user-purpose">Похудение</span>
+                  <span class="form__desc form__desc--radio">Похудение</span>
                 </label>
 
-                <label for="purpose__mass-gain" class="form__input-wrapper form__input-wrapper--radio">
+                <label for="purpose__mass-gain" class="form__input-wrapper form__input-wrapper--radio input__wrapper--radio">
                   <input type="radio" 
                         id="purpose__mass-gain" 
                         name="purpose" 
                         value="Набор массы" 
                         class="input__radio">
                   <span class="input input--radio"></span>
-                  <span class="form__desc form__desc--user-purpose">Набор массы</span>
+                  <span class="form__desc form__desc--radio">Набор массы</span>
                 </label>
 
-                <label for="purpose__unknown" class="form__input-wrapper form__input-wrapper--radio">
+                <label for="purpose__unknown" class="form__input-wrapper form__input-wrapper--radio input__wrapper--radio">
                   <input type="radio" 
                         id="purpose__unknown" 
                         name="purpose" 
                         value="Не знаю (Нужен ваш совет)" 
                         class="input__radio">
                   <span class="input input--radio"></span>
-                  <span class="form__desc form__desc--user-purpose">Не знаю (Нужен ваш совет)</span>
+                  <span class="form__desc form__desc--radio">Не знаю (Нужен ваш совет)</span>
                 </label>
               </div>
             </div>
@@ -103,13 +135,19 @@
                         container 
                         container--selection">
               <legend class="section__legend section__legend--user-contacts">Контактные данные (владельца кота)</legend>
-              <p class="form__input-wrapper form__input-wrapper--user-contacts">
+              <p class="form__input-wrapper form__input-wrapper--user-contacts input__wrapper">
                 <span class="form__desc">E-mail:*</span>
                 <input type="email" class="input input--text" required >
+                <svg class="input__label input__label--mail" width="17" height="13">
+                  <use xlink:href="./image/spriteSVG/sprite.svg#mail"></use>
+                </svg>
               </p>
-              <p class="form__input-wrapper form__input-wrapper--user-contacts">
+              <p class="form__input-wrapper form__input-wrapper--user-contacts input__wrapper">
                 <span class="form__desc">Телефон:*</span>
                 <input type="tel" class="input input--text" required>
+                <svg class="input__label input__label--phone" width="20" height="20">
+                  <use xlink:href="./image/spriteSVG/sprite.svg#phone"></use>
+                </svg>
               </p>
             </div>
           </fieldset>
@@ -130,7 +168,7 @@
                         container--selection">
               <legend class="section__legend">Дополнительно</legend>
 
-              <label for="additional-services__sweetener" class="form__input-wrapper form__input-wrapper--checkbox">
+              <label for="additional-services__sweetener" class="form__input-wrapper form__input-wrapper--checkbox input__wrapper--checkbox ">
                 <input type="checkbox" 
                       id="additional-services__sweetener" 
                       class="input__checkbox" >
@@ -138,7 +176,7 @@
                 <span class="form__desc form__desc--checkbox">Сахарозаменитель</span>
               </label>
               
-              <label for="additional-services__water" class="form__input-wrapper form__input-wrapper--checkbox">
+              <label for="additional-services__water" class="form__input-wrapper form__input-wrapper--checkbox input__wrapper--checkbox">
                 <input type="checkbox" 
                       id="additional-services__water" 
                       class="input__checkbox">
@@ -146,7 +184,7 @@
                 <span class="form__desc form__desc--checkbox">Питьевая вода</span>
               </label>
               
-              <label for="additional-services__milk" class="form__input-wrapper form__input-wrapper--checkbox">
+              <label for="additional-services__milk" class="form__input-wrapper form__input-wrapper--checkbox input__wrapper--checkbox">
                 <input type="checkbox"
                       id="additional-services__milk" 
                       class="input__checkbox">
@@ -154,7 +192,7 @@
                 <span class="form__desc form__desc--checkbox">Молоко</span>
               </label>
               
-              <label for="additional-services__vitamins" class="form__input-wrapper form__input-wrapper--checkbox">
+              <label for="additional-services__vitamins" class="form__input-wrapper form__input-wrapper--checkbox input__wrapper--checkbox">
                 <input type="checkbox" 
                       id="additional-services__vitamins" 
                       class="input__checkbox">
@@ -170,9 +208,10 @@
           </div>
         </form>
       </section>
+
       <section class="contacts">
         <h2 class="visually-hidden">Наши контакты</h2>
-        <div class="contacts__welcome contacts__welcome--selection">
+        <div class="contacts__welcome container">
           <p class="contacts__contribution"
             >Приглашаем <br />
             к сотрудничеству <br />
@@ -186,7 +225,6 @@
           >
         </div>
         <p class="map contacts__map">
-          <span class="map__pin"></span>
           <picture class="map__container">
             <source
               type="image/webp"
@@ -196,49 +234,48 @@
                 ./image/content-picture/map-desktop.webp    1x
               "
               alt="ул. Большая Конюшенная, 14/88"
-              class="map__image"
+              
             />
             <source
               media="(min-width:1300px)"
               srcset="
-                ./image/content-picture/map-desktop@2x.jpg 2x,
-                ./image/content-picture/map-desktop.jpg    1x
+                ./image/content-picture/map-desktop@2x.png 2x,
+                ./image/content-picture/map-desktop.png    1x
               "
               alt="ул. Большая Конюшенная, 14/88"
-              class="map__image"
+              
             />
             <source
               type="image/webp"
-              media="(min-width:660px)"
+              media="(min-width:768px)"
               srcset="
                 ./image/content-picture/map-tablet@2x.webp 2x,
                 ./image/content-picture/map-tablet.webp    1x
               "
               alt="ул. Большая Конюшенная, 14/88"
-              class="map__image"
+              
             />
             <source
-              media="(min-width:660px)"
+              media="(min-width:768px)"
               srcset="
-                ./image/content-picture/map-tablet@2x.jpg 2x,
-                ./image/content-picture/map-tablet.jpg    1x
+                ./image/content-picture/map-tablet@2x.png 2x,
+                ./image/content-picture/map-tablet.png    1x
               "
               alt="ул. Большая Конюшенная, 14/88"
-              class="map__image"
+              
             />
             <source
               type="image/webp"
-              media="(min-width:320px)"
               srcset="
                 ./image/content-picture/map-mobile@2x.webp 2x,
                 ./image/content-picture/map-mobile.webp    1x
               "
               alt="ул. Большая Конюшенная, 14/88"
-              class="map__image"
+              
             />
             <img
-              srcset="./image/content-picture/map-mobile@2x.jpg 2x"
-              src="./image/content-picture/map-mobile.jpg"
+              srcset="./image/content-picture/map-mobile@2x.png 2x"
+              src="./image/content-picture/map-mobile.png"
               alt="ул. Большая Конюшенная, 14/88"
               class="map__image"
             />
@@ -247,10 +284,9 @@
       </section>
     </main>
     <footer class="footer">
-
-      <div class="footer__wrapper container">
+      <div class="footer__inner container">
           <p class="logo__wrapper footer__item footer__item--logo">
-              <a href="" class="logo">
+              <a href="/" class="logo">
                   <img src="./image/content-SVG/footer-logo.svg" alt="Логитип нашего сайта" width="128px" height="24px">
               </a>
           </p>
@@ -263,6 +299,7 @@
                 </svg>
               </a>
             </li>
+    
             <li class="socials__item">
               <a href="" class="socials__link" aria-label="Инстаграм">
                 <svg class="socials__logo socials__logo--instagram" width="23" height="23">
@@ -271,6 +308,7 @@
                 </svg>
               </a>
             </li>
+    
             <li class="socials__item">
               <a href="" class="socials__link" aria-label="Фейсбук">
                 <svg class="socials__logo socials__logo--fb" width="14" height="28">
