@@ -200,7 +200,7 @@ function watcher() {
   watch("./src/image/CSS/*.svg", svgCSS)
 }
 
-exports.build = series(clear, parallel(styles, html, picture, js, compilingJs, webpPicture, svgInlineSprite, svgCSS, fonts));
+exports.build = series(clear, parallel(styles, html, js, compilingJs, picture, webpPicture, svgInlineSprite, svgCSS, fonts, imgSprite));
 exports.watch = series(clear, parallel(styles, html, js, compilingJs), watcher);
 exports.preflight = series(clear, parallel(styles, html, js, compilingJs, picture, webpPicture, svgInlineSprite, svgCSS, fonts,imgSprite));
 exports.test = js;
