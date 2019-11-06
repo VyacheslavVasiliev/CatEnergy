@@ -1,0 +1,168 @@
+.main-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  position: relative;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 106px;
+  }
+  @media (min-width: 1300px) {
+    min-height: 167px;
+    height: 167px; // в IE 11 не работает min-height с Flex. Пришлось явно устанавливать и убирать высоту 
+
+    @supports (display: initial) {
+      height: auto;
+    }
+  }
+}
+
+.main-navigation__logo {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 20px;
+  margin: 0;
+
+  min-height: 65px;
+
+  @media (min-width: 768px) {
+    position: static;
+
+    padding: 0;
+  }
+}
+
+.main-navigation__image-logo {
+  width: 33px;
+  height: 38px;
+  @media (min-width: 768px) {
+    width: 173px;
+    height: 58px;
+  }
+  @media (min-width: 1300px) {
+    width: 202px;
+    height: 59px;
+  }
+}
+
+.main-navigation__caption-logo {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.main-navigation__list {
+  .listDrop();
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  text-align: center;
+  font-size: 20px;
+  line-height: 20px;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  @media (min-width: 1300px) {
+    width: 50%;
+    justify-content: flex-end;
+
+    font-size: 20px;
+  }
+}
+
+.main-navigation__item {
+  border-top: 1px solid #444444;
+  @media (min-width: 768px) {
+    border: none;
+  }
+}
+.main-navigation__item + .main-navigation__item {
+  @media (min-width: 768px) {
+    padding-left: 26px;
+  }
+}
+.main-navigation__link {
+  color: @titleTextColor;
+  display: block;
+  padding: 23px 0;
+  @media (min-width: 768px) {
+    padding: 7px 0;
+    &:hover {
+      color: fade(@titleTextColor, 60%);
+    }
+
+    &:active {
+      color: fade(@titleTextColor, 30%);
+    }
+
+    &:not([href]) {
+      cursor: default;
+      border-bottom: 2px solid @imageBackgroundColor;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .main-navigation__link:not([href]):hover,
+  .main-navigation__link:not([href]):active {
+    color: @titleTextColor;
+  }
+}
+
+.main-navigation__link--main {
+  @media (min-width: 1300px) {
+    color: @secondaryTitleTextColor;
+    &:hover {
+      color: fade(@secondaryTitleTextColor, 60%);
+    }
+
+    &:active {
+      color: fade(@secondaryTitleTextColor, 30%);
+    }
+
+    &:not([href]) {
+      border-bottom: 2px solid @secondaryTitleTextColor;
+    }
+  }
+}
+
+@media (min-width: 1300px) {
+  .main-navigation__link--main:not([href]):hover,
+  .main-navigation__link--main:not([href]):active {
+    color: @secondaryTitleTextColor;
+  }
+}
+
+// .main-navigation__link--selection {
+// }
+
+.main-navigation__toggler {
+  position: absolute;
+  right: 0;
+  top: 0;
+  @media (min-width: 768px) {
+    display: none;
+  }
+}

@@ -1,0 +1,35 @@
+.map {
+  margin: 0;
+  padding: 0;
+
+  position: relative;
+
+  font-size: 0;
+  text-align: center;
+  background-color: @secondaryBackgroundColor;
+
+  @media (min-width: 1300px) {
+    background-color: @mainBackgroundColor;
+  }
+
+  &::before{
+    content: "";
+    position: absolute;
+  
+    top: 51%;
+    left: 51%;
+  
+    transform: translate(-50%, -50%);
+  
+    .retina-sprite(@map-pin-mobile-group);
+  
+    @media (min-width: 768px) {
+      top: 50%;
+  
+      .retina-sprite(@map-pin-group);
+    }
+    @media (min-width: 1300px) {
+      left: 74%;
+    }
+  }
+}

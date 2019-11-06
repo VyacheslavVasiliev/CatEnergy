@@ -1,0 +1,127 @@
+.section {
+  border: none;
+  border-top: 3px solid @imageBackgroundColor;
+  padding: 0;
+  margin: 0;
+}
+
+.section--cat-info {
+  border: none;
+}
+.section--additional-services {
+  @media (min-width: 768px) {
+  }
+}
+
+.section__container {
+  position: relative;
+
+  border: none;
+  margin: 0;
+  padding-top: 42px;
+  padding-bottom: 45px;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+}
+
+.section__container--user-purpose {
+  border-top: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
+  padding: 20px;
+  @media (min-width: 768px) {
+    border: 1px solid #ededed;
+    padding: 25px;
+  }
+  @media (min-width: 1300px) {
+    align-items: flex-start;
+    
+    width: 46.5%;
+    flex-direction: column;
+  }
+}
+
+.section__container--contacts {
+  padding-top: 65px;
+}
+
+.section__container--cat-description {
+  padding-top: 40px;
+  padding-bottom: 24px;
+  padding-left: 20px;
+  padding-right: 20px;
+  @media (min-width: 768px) {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  @media (min-width: 1300px) {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-right: 7%;
+    width: 46.5%;
+  }
+}
+
+.section__container--additional-services {
+  padding-bottom: 35px;
+  @media (min-width: 768px) {
+    padding-top: 65px;
+    padding-bottom: 55px;
+  }
+  @media (min-width: 1300px) {
+    padding-bottom: 60px;
+  }
+}
+
+.section__cat-info {
+  margin-bottom: 42px;
+  @media (min-width: 768px) {
+    margin-bottom: 95px;
+  }
+  @media (min-width: 1300px) {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: 65px;
+    margin-bottom: 90px;
+  }
+}
+
+.section__legend {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  transform: translateY(-50%);
+
+  margin: 0;
+  padding: 0 20px;
+  background-color: @mainBackgroundColor;
+
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 24px;
+  line-height: 24px;
+
+  @media (min-width: 768px) {
+    left: 30px;
+
+    padding-left: 40px;
+    padding-right: 40px;
+
+    font-size: 36px;
+    line-height: 36px;
+  }
+}
+
+.section__legend--user-contacts {
+  @media (max-width: 767px) {
+    width: 250px;
+  }
+}

@@ -1,0 +1,99 @@
+.representation {
+  margin-top: 30px;
+  @media (min-width: 768px) {
+    margin-top: 80px;
+  }
+  @media (min-width: 1300px) {
+    margin-top: 0;
+  }
+}
+
+.representation__root {
+  position: relative;
+
+  overflow: hidden;
+  display: block;
+  width: 100%;
+
+  min-height: 250px;
+  @media (min-width: 768px) {
+    min-height: 525px;
+  }
+}
+
+.representation__cut {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  width: 100%;
+  @media (min-width: 768px) {
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    overflow: hidden;
+    min-height: 525px;
+  }
+}
+
+@media (min-width: 768px) {
+  .representation__cut--after {
+    left: 50%;
+  }
+  .representation__cut--before {
+    top: 4%;
+    left: -50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .representation__image {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    max-width: none;
+  }
+  .representation__image--after {
+    left: 0%;
+    transform: translateX(-48%);
+  }
+  .representation__image--before {
+    left: 100%;
+    transform: translateX(-54%);
+  }
+}
+
+.representation__slider {
+  margin-top: 10px;
+  margin-bottom: 35px;
+  @media (min-width: 768px) {
+    margin-top: 0;
+    margin-bottom: 65px;
+  }
+  @media (min-width: 1300px) {
+    margin-top: 50px;
+  }
+}
+
+// переключение картинок 
+@media (max-width: 767px) {
+  .representation__cut--after {
+    display: none;
+  }
+
+  .representation__show--after {
+    & .representation__cut--after {
+      display: block;
+    }
+    & .representation__cut--before {
+      display: none;
+    }
+    & .representation--slider__lever {
+      margin-left: auto;
+    }
+  }
+}

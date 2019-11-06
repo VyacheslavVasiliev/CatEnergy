@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "Oswald";
+
+  font-style: normal;
+  font-weight: 400;
+
+  src: url("./fonts/Oswald-Regular.woff") format("woff");
+}
+
+:root {
+  box-sizing: border-box;
+}
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  padding: 0;
+
+  background-color: @mainBackgroundColor;
+
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  // letter-spacing: 0.1em; // в макете везьде растоняние между буквами 100%. не проебись с этим свойством в будущем если будешь копировать этот файл
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+picture {
+  font-size: 0;
+}

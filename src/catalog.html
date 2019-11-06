@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./scripts/polyfill.min.js"></script>
+    <script src="./scripts/svg4everybody.min.js"></script>
+    <script src="./scripts/picturefill.min.js"></script>
+    <script src="./scripts/script.js" defer></script>
+    <title>Cat Energy</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="main-navigation container">
+        <a href="/" class="logo main-navigation__logo">
+          <picture class="main-navigation__image-wrapper">
+            <source
+              type="image/svg+xml"
+              media="(min-width:1300px)"
+              srcset="./image/content-SVG/logo-desktop.svg"
+              alt="Логотип магазина Cat Energy"
+              class="main-navigation__image-logo"
+            />
+            <source
+              type="image/svg+xml"
+              media="(min-width:768px)"
+              srcset="./image/content-SVG/logo-tablet.svg"
+              alt="Логотип магазина Cat Energy"
+              class="main-navigation__image-logo"
+            />
+            <source
+              type="image/svg+xml"
+              media="(min-width:320px)"
+              srcset="./image/content-SVG/logo-mobile.svg"
+              alt="Логотип магазина Cat Energy"
+              class="main-navigation__image-logo"
+            />
+            <img
+              media="(min-width:320px)"
+              srcset="./image/content-SVG/logo-mobile.svg"
+              alt="Логотип магазина Cat Energy"
+              class="main-navigation__image-logo"
+            />
+          </picture>
+          <img src="./image/content-SVG/logo-mobile-header.svg" alt="Cat Energy" class="main-navigation__caption-logo">
+        </a>
+        <button class="toggler toggler--close main-navigation__toggler">Переключатель</button>
+        <ul class="main-navigation__list">
+          <li class="main-navigation__item">
+            <a href="/" class="main-navigation__link main-navigation__link">Главная</a>
+          </li>
+          <li class="main-navigation__item">
+            <a class="main-navigation__link main-navigation__link">Каталог продукции</a>
+          </li>
+          <li class="main-navigation__item">
+            <a href="./product_selection.html" class="main-navigation__link main-navigation__link">Подбор программы</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <section class="catalog container container--catalog">
+        <h1 class="catalog__title">Каталог продукции</h1>
+        <ul class="catalog__list">
+
+          <li class="catalog__item product">
+            <picture class="product__image-wrapper">
+              <source
+                type="image/webp"
+                media="(min-width:1300px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-1-desktop@2x.webp 2x,
+                  ./image/content-picture/catalog/catalog-1-desktop.webp    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--small"
+              />
+              <source
+                media="(min-width:1300px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-1-desktop@2x.png 2x,
+                  ./image/content-picture/catalog/catalog-1-desktop.png    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--small"
+              />
+              <source
+                type="image/webp"
+                media="(min-width:768px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-1-tablet@2x.webp 2x,
+                  ./image/content-picture/catalog/catalog-1-tablet.webp    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--small"
+              />
+              <source
+                media="(min-width:768px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-1-tablet@2x.png 2x,
+                  ./image/content-picture/catalog/catalog-1-tablet.png    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--small"
+              />
+              <source
+                type="image/webp"
+                media="(min-width:320px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-1-mobile@2x.webp 2x,
+                  ./image/content-picture/catalog/catalog-1-mobile.webp    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--small"
+              />
+              <img
+                srcset="./image/content-picture/catalog/catalog-1-mobile@2x.jpg 2x"
+                src="./image/content-picture/catalog/catalog-1-mobile.jpg"
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--small"
+              />
+            </picture>
+            <div class="product__container">
+              <h3 class="product__name">Cat Energy PRO 500&nbspг</h3>
+              <table class="product__desc">
+                <tr class="product__row">
+                  <td class="product__feature">Объем</td>
+                  <td class="product__value">500&nbspг</td>
+                </tr>
+                <tr class="product__row">
+                  <td class="product__feature">Вкус</td>
+                  <td class="product__value">Курица</td>
+                </tr>
+                <tr class="product__row">
+                  <td class="product__feature">Цена</td>
+                  <td class="product__value">700&nbspР.</td>
+                </tr>
+              </table>
+              <button class="button button--catalog product__button "> Заказать</button>
+            </div>
+          </li>
+
+          <li class="catalog__item product">
+            <picture class="product__image-wrapper">
+              <source
+                type="image/webp"
+                media="(min-width:1300px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-2-desktop@2x.webp 2x,
+                  ./image/content-picture/catalog/catalog-2-desktop.webp    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--large"
+              />
+              <source
+                media="(min-width:1300px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-2-desktop@2x.png 2x,
+                  ./image/content-picture/catalog/catalog-2-desktop.png    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--large"
+              />
+              <source
+                type="image/webp"
+                media="(min-width:768px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-2-tablet@2x.webp 2x,
+                  ./image/content-picture/catalog/catalog-2-tablet.webp    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--large"
+              />
+              <source
+                media="(min-width:768px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-2-tablet@2x.png 2x,
+                  ./image/content-picture/catalog/catalog-2-tablet.png    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--large"
+              />
+              <source
+                type="image/webp"
+                media="(min-width:320px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-2-mobile@2x.webp 2x,
+                  ./image/content-picture/catalog/catalog-2-mobile.webp    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--large"
+              />
+              <img
+                srcset="./image/content-picture/catalog/catalog-2-mobile@2x.jpg 2x"
+                src="./image/content-picture/catalog/catalog-2-mobile.jpg"
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--large"
+              />
+            </picture>
+            <div class="product__container">
+              <h3 class="product__name">Cat Energy PRO 1000&nbspг</h3>
+              <table class="product__desc">
+                <tr class="product__row">
+                  <td class="product__feature">Объем</td>
+                  <td class="product__value">1000&nbspг</td>
+                </tr>
+                <tr class="product__row">
+                  <td class="product__feature">Вкус</td>
+                  <td class="product__value">Курица</td>
+                </tr>
+                <tr class="product__row">
+                  <td class="product__feature">Цена</td>
+                  <td class="product__value">1000&nbspР.</td>
+                </tr>
+              </table>
+              <button class="button button--catalog product__button "> Заказать</button>
+            </div>
+          </li>
+
+          <li class="catalog__item product">
+            <picture class="product__image-wrapper">
+              <source
+                type="image/webp"
+                media="(min-width:1300px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-3-desktop@2x.webp 2x,
+                  ./image/content-picture/catalog/catalog-3-desktop.webp    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--small"
+              />
+              <source
+                media="(min-width:1300px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-3-desktop@2x.png 2x,
+                  ./image/content-picture/catalog/catalog-3-desktop.png    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--small"
+              />
+              <source
+                type="image/webp"
+                media="(min-width:768px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-3-tablet@2x.webp 2x,
+                  ./image/content-picture/catalog/catalog-3-tablet.webp    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--small"
+              />
+              <source
+                media="(min-width:768px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-3-tablet@2x.png 2x,
+                  ./image/content-picture/catalog/catalog-3-tablet.png    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--small"
+              />
+              <source
+                type="image/webp"
+                media="(min-width:320px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-3-mobile@2x.webp 2x,
+                  ./image/content-picture/catalog/catalog-3-mobile.webp    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--small"
+              />
+              <img
+                srcset="./image/content-picture/catalog/catalog-3-mobile@2x.jpg 2x"
+                src="./image/content-picture/catalog/catalog-3-mobile.jpg"
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--small"
+              />
+            </picture>
+            <div class="product__container">
+              <h3 class="product__name">Cat Energy PRO 500&nbspг</h3>
+              <table class="product__desc">
+                <tr class="product__row">
+                  <td class="product__feature">Объем</td>
+                  <td class="product__value">500&nbspг</td>
+                </tr>
+                <tr class="product__row">
+                  <td class="product__feature">Вкус</td>
+                  <td class="product__value">Рыба</td>
+                </tr>
+                <tr class="product__row">
+                  <td class="product__feature">Цена</td>
+                  <td class="product__value">700&nbspР.</td>
+                </tr>
+              </table>
+              <button class="button button--catalog product__button "> Заказать</button>
+            </div>
+          </li>
+
+          <li class="catalog__item product">
+            <picture class="product__image-wrapper">
+              <source
+                type="image/webp"
+                media="(min-width:1300px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-4-desktop@2x.webp 2x,
+                  ./image/content-picture/catalog/catalog-4-desktop.webp    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--large"
+              />
+              <source
+                media="(min-width:1300px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-4-desktop@2x.png 2x,
+                  ./image/content-picture/catalog/catalog-4-desktop.png    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--large"
+              />
+              <source
+                type="image/webp"
+                media="(min-width:768px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-4-tablet@2x.webp 2x,
+                  ./image/content-picture/catalog/catalog-4-tablet.webp    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--large"
+              />
+              <source
+                media="(min-width:768px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-4-tablet@2x.png 2x,
+                  ./image/content-picture/catalog/catalog-4-tablet.png    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--large"
+              />
+              <source
+                type="image/webp"
+                media="(min-width:320px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-4-mobile@2x.webp 2x,
+                  ./image/content-picture/catalog/catalog-4-mobile.webp    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--large"
+              />
+              <img
+                srcset="./image/content-picture/catalog/catalog-4-mobile@2x.jpg 2x"
+                src="./image/content-picture/catalog/catalog-4-mobile.jpg"
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--large"
+              />
+            </picture>
+            <div class="product__container">
+              <h3 class="product__name">Cat Energy PRO 1000&nbspг</h3>
+              <table class="product__desc">
+                <tr class="product__row">
+                  <td class="product__feature">Объем</td>
+                  <td class="product__value">1000&nbspг</td>
+                </tr>
+                <tr class="product__row">
+                  <td class="product__feature">Вкус</td>
+                  <td class="product__value">Рыба</td>
+                </tr>
+                <tr class="product__row">
+                  <td class="product__feature">Цена</td>
+                  <td class="product__value">1000&nbspР.</td>
+                </tr>
+              </table>
+              <button class="button button--catalog product__button "> Заказать</button>
+            </div>
+          </li>
+
+          <li class="catalog__item product">
+            <picture class="product__image-wrapper">
+              <source
+                type="image/webp"
+                media="(min-width:1300px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-5-desktop@2x.webp 2x,
+                  ./image/content-picture/catalog/catalog-5-desktop.webp    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--small"
+              />
+              <source
+                media="(min-width:1300px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-5-desktop@2x.png 2x,
+                  ./image/content-picture/catalog/catalog-5-desktop.png    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--small"
+              />
+              <source
+                type="image/webp"
+                media="(min-width:768px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-5-tablet@2x.webp 2x,
+                  ./image/content-picture/catalog/catalog-5-tablet.webp    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--small"
+              />
+              <source
+                media="(min-width:768px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-5-tablet@2x.png 2x,
+                  ./image/content-picture/catalog/catalog-5-tablet.png    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--small"
+              />
+              <source
+                type="image/webp"
+                media="(min-width:320px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-5-mobile@2x.webp 2x,
+                  ./image/content-picture/catalog/catalog-5-mobile.webp    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--small"
+              />
+              <img
+                srcset="./image/content-picture/catalog/catalog-5-mobile@2x.jpg 2x"
+                src="./image/content-picture/catalog/catalog-5-mobile.jpg"
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--small"
+              />
+            </picture>
+            <div class="product__container">
+              <h3 class="product__name">Cat Energy PRO 500&nbspг</h3>
+              <table class="product__desc">
+                <tr class="product__row">
+                  <td class="product__feature">Объем</td>
+                  <td class="product__value">500&nbspг</td>
+                </tr>
+                <tr class="product__row">
+                  <td class="product__feature">Вкус</td>
+                  <td class="product__value">Гречка</td>
+                </tr>
+                <tr class="product__row">
+                  <td class="product__feature">Цена</td>
+                  <td class="product__value">400&nbspР.</td>
+                </tr>
+              </table>
+              <button class="button button--catalog product__button "> Заказать</button>
+            </div>
+          </li>
+
+          <li class="catalog__item product">
+            <picture class="product__image-wrapper">
+              <source
+                type="image/webp"
+                media="(min-width:1300px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-6-desktop@2x.webp 2x,
+                  ./image/content-picture/catalog/catalog-6-desktop.webp    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--large"
+              />
+              <source
+                media="(min-width:1300px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-6-desktop@2x.png 2x,
+                  ./image/content-picture/catalog/catalog-6-desktop.png    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--large"
+              />
+              <source
+                type="image/webp"
+                media="(min-width:768px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-6-tablet@2x.webp 2x,
+                  ./image/content-picture/catalog/catalog-6-tablet.webp    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--large"
+              />
+              <source
+                media="(min-width:768px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-6-tablet@2x.png 2x,
+                  ./image/content-picture/catalog/catalog-6-tablet.png    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--large"
+              />
+              <source
+                type="image/webp"
+                media="(min-width:320px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-6-mobile@2x.webp 2x,
+                  ./image/content-picture/catalog/catalog-6-mobile.webp    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--large"
+              />
+              <img
+                srcset="./image/content-picture/catalog/catalog-6-mobile@2x.jpg 2x"
+                src="./image/content-picture/catalog/catalog-6-mobile.jpg"
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--large"
+              />
+            </picture>
+            <div class="product__container">
+              <h3 class="product__name">Cat Energy PRO 1000&nbspг</h3>
+              <table class="product__desc">
+                <tr class="product__row">
+                  <td class="product__feature">Объем</td>
+                  <td class="product__value">1000&nbspг</td>
+                </tr>
+                <tr class="product__row">
+                  <td class="product__feature">Вкус</td>
+                  <td class="product__value">Гречка</td>
+                </tr>
+                <tr class="product__row">
+                  <td class="product__feature">Цена</td>
+                  <td class="product__value">700&nbspР.</td>
+                </tr>
+              </table>
+              <button class="button button--catalog product__button "> Заказать</button>
+            </div>
+          </li>
+
+          <li class="catalog__item product">
+            <picture class="product__image-wrapper">
+              <source
+                type="image/webp"
+                media="(min-width:1300px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-7-desktop@2x.webp 2x,
+                  ./image/content-picture/catalog/catalog-7-desktop.webp    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--small"
+              />
+              <source
+                media="(min-width:1300px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-7-desktop@2x.png 2x,
+                  ./image/content-picture/catalog/catalog-7-desktop.png    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--small"
+              />
+              <source
+                type="image/webp"
+                media="(min-width:768px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-7-tablet@2x.webp 2x,
+                  ./image/content-picture/catalog/catalog-7-tablet.webp    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--small"
+              />
+              <source
+                media="(min-width:768px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-7-tablet@2x.png 2x,
+                  ./image/content-picture/catalog/catalog-7-tablet.png    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--small"
+              />
+              <source
+                type="image/webp"
+                media="(min-width:320px)"
+                srcset="
+                  ./image/content-picture/catalog/catalog-7-mobile@2x.webp 2x,
+                  ./image/content-picture/catalog/catalog-7-mobile.webp    1x
+                "
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--small"
+              />
+              <img
+                srcset="./image/content-picture/catalog/catalog-7-mobile@2x.jpg 2x"
+                src="./image/content-picture/catalog/catalog-7-mobile.jpg"
+                alt="Корм Cat Energy Pro со вкуском курицы"
+                class="product__image product__image--small"
+              />
+            </picture>
+            <div class="product__container">
+              <h3 class="product__name">Cat Energy PRO 500&nbspг</h3>
+              <table class="product__desc">
+                <tr class="product__row">
+                  <td class="product__feature">Объем</td>
+                  <td class="product__value">500&nbspг</td>
+                </tr>
+                <tr class="product__row">
+                  <td class="product__feature">Вкус</td>
+                  <td class="product__value">Рис</td>
+                </tr>
+                <tr class="product__row">
+                  <td class="product__feature">Цена</td>
+                  <td class="product__value">500&nbspР.</td>
+                </tr>
+              </table>
+              <button class="button button--catalog product__button "> Заказать</button>
+            </div>
+          </li>
+
+          <li class="catalog__item catalog__show-product show-product">
+            <h3 class="show-product__title">Показать еще 100500 товаров</h3>
+            <p class="show-product__text">На самом деле вкусов гораздо больше!</p>
+            <button class="show-product__button  button button--grey">Показать все</button>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <div class="services section__container container">
+          <h2 class="section__legend">Дополнительные товары</h2>
+          <ul class="services__list">
+            <li class="services__item">
+              <h3 class="services__title">Сахарозаменитель</h3>
+              <dl class="services__offer">
+                <dt class="services__feature">1 упаковка (100 г)</dt>
+                <dd class="services__price">200 Р.</dd>
+              </dl>
+              <button class="button button--catalog services__button">Заказать</button>
+            </li>
+            <li class="services__item">
+              <h3 class="services__title">Питьевая вода</h3>
+              <dl class="services__offer">
+                <dt class="services__feature">5 литров</dt>
+                <dd class="services__price">50 Р.</dd>
+              </dl>
+              <button class="button button--catalog services__button">Заказать</button>
+            </li>
+            <li class="services__item">
+              <h3 class="services__title">Молоко</h3>
+              <dl class="services__offer">
+                <dt class="services__feature">1 литр</dt>
+                <dd class="services__price">100 Р.</dd>
+              </dl>
+              <button class="button button--catalog services__button">Заказать</button>
+            </li>
+            <li class="services__item">
+              <h3 class="services__title">Витамины</h3>
+              <dl class="services__offer">
+                <dt class="services__feature">1 упаковка (30 г)</dt>
+                <dd class="services__price">300 Р.</dd>
+              </dl>
+              <button class="button button--catalog services__button">Заказать</button>
+            </li>
+          </ul>
+          <p class="services__action">
+            <span class="services__action-text">
+              Закажите все <br>
+              и получите чехол для <br>
+              кота в подарок!
+            </span>
+          </p>
+        </div>
+      </section>
+
+      <section class="contacts">
+        <h2 class="visually-hidden">Наши контакты</h2>
+        <div class="contacts__welcome container">
+          <p class="contacts__contribution"
+            >Приглашаем <br />
+            к сотрудничеству <br />
+            дилеров!</p
+          >
+          <p class="contacts__address"
+            >ул. Большая <br />
+            Конюшенная, д. 14/88 <br />
+            <span class="contacts__city">Санкт-Петербург</span>
+          </p
+          >
+        </div>
+        <p class="map contacts__map">
+          <picture class="map__container">
+            <source
+              type="image/webp"
+              media="(min-width:1300px)"
+              srcset="
+                ./image/content-picture/map-desktop@2x.webp 2x,
+                ./image/content-picture/map-desktop.webp    1x
+              "
+              alt="ул. Большая Конюшенная, 14/88"
+              
+            />
+            <source
+              media="(min-width:1300px)"
+              srcset="
+                ./image/content-picture/map-desktop@2x.png 2x,
+                ./image/content-picture/map-desktop.png    1x
+              "
+              alt="ул. Большая Конюшенная, 14/88"
+              
+            />
+            <source
+              type="image/webp"
+              media="(min-width:768px)"
+              srcset="
+                ./image/content-picture/map-tablet@2x.webp 2x,
+                ./image/content-picture/map-tablet.webp    1x
+              "
+              alt="ул. Большая Конюшенная, 14/88"
+              
+            />
+            <source
+              media="(min-width:768px)"
+              srcset="
+                ./image/content-picture/map-tablet@2x.png 2x,
+                ./image/content-picture/map-tablet.png    1x
+              "
+              alt="ул. Большая Конюшенная, 14/88"
+              
+            />
+            <source
+              type="image/webp"
+              srcset="
+                ./image/content-picture/map-mobile@2x.webp 2x,
+                ./image/content-picture/map-mobile.webp    1x
+              "
+              alt="ул. Большая Конюшенная, 14/88"
+              
+            />
+            <img
+              srcset="./image/content-picture/map-mobile@2x.png 2x"
+              src="./image/content-picture/map-mobile.png"
+              alt="ул. Большая Конюшенная, 14/88"
+              class="map__image"
+            />
+          </picture>
+        </p>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__inner container">
+
+          <p class="logo__wrapper footer__item footer__item--logo">
+              <a href="/" class="logo">
+                  <img src="./image/content-SVG/footer-logo.svg" alt="Логитип нашего сайта" width="128px" height="24px">
+              </a>
+          </p>
+          <ul class="socials footer__item footer__item--socials">
+            <li class="socials__item">
+              <a href="" class="socials__link" aria-label="Вконтакте">
+                <svg class="socials__logo socials__logo--vk" width="30" height="16">
+                <!-- <svg class="socials__link-logo" width="22" height="12"> -->
+                  <use xlink:href="./image/spriteSVG/sprite.svg#vk"></use>
+                </svg>
+              </a>
+            </li>
+    
+            <li class="socials__item">
+              <a href="" class="socials__link" aria-label="Инстаграм">
+                <svg class="socials__logo socials__logo--instagram" width="23" height="23">
+                <!-- <svg class="socials__logo" width="16" height="16"> -->
+                  <use xlink:href="./image/spriteSVG/sprite.svg#instagram"></use>
+                </svg>
+              </a>
+            </li>
+    
+            <li class="socials__item">
+              <a href="" class="socials__link" aria-label="Фейсбук">
+                <svg class="socials__logo socials__logo--fb" width="14" height="28">
+                <!-- <svg class="socials__logo socials__logo--" width="10" height="19"> -->
+                  <use xlink:href="./image/spriteSVG/sprite.svg#fb"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+          <a class="footer__nothing footer__item footer__item--nothing">Рекалама =)</a>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+.slider {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.silder__body {
+  padding: 3px;
+  margin: 0;
+
+  background-color: #ffffff;
+  border: 1px solid #cdcdcd;
+  border-radius: 15px;
+
+  width: 30%;
+  @media (min-width: 768px) {
+    position: relative;
+    width: 60.451%;
+  }
+}
+
+.slider__lever {
+  display: block;
+  width: 50%;
+  height: 6px;
+  background-color: @imageBackgroundColor;
+  border-radius: 15px;
+  @media (min-width: 768px) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 32px;
+    height: 32px;
+    border: 1px solid #cdcdcd;
+    border-radius: 50%;
+    background-color: @mainBackgroundColor;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+
+    &:hover {
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+    }
+
+    &:active{
+      border: 2px solid @imageBackgroundColor;
+      
+      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.30);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: @imageBackgroundColor;
+    }
+  }
+}
+
+.slider__button {
+  position: relative;
+  width: 23%;
+  background-color: transparent;
+  border: none;
+
+  color: @titleTextColor;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 400;
+  cursor: pointer;
+
+  @media (min-width: 768px) {
+    width: 13.418%;
+
+    font-size: 20px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -7px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      width: 58%;
+      border-bottom: 1px dashed #bebebe;
+    }
+  }
+}
+
+.slider__button:focus {
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .slider__button:hover.slider__button::before,
+  .slider__button:focus.slider__button::before {
+    border-bottom: 1px solid #989898;
+  }
+
+  .slider__button:active.slider__button::before {
+    border-bottom: none;
+  }
+}

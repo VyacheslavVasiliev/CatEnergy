@@ -1,0 +1,134 @@
+.form {
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: @titleTextColor;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  @media (min-width: 768px) {
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+.form__input-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 14px;
+  @media (min-width: 768px) {
+    margin-bottom: 20px;
+  }
+}
+.form__input-wrapper--radio {
+  cursor: pointer;
+  @media (min-width: 768px) {
+    margin-bottom: 14px;
+    width: auto;
+  }
+}
+.form__input-wrapper--radio:active { //не работает в IE. ибо событие active не всплывает в IE по только богу известной причине
+  opacity: 0.3;
+}
+
+.form__input-wrapper--user-contacts {
+  @media (min-width: 1300px) {
+    width: 46.5%;
+    margin-bottom: 0;
+  }
+}
+.form__input-wrapper--user-contacts:nth-child(2n) {
+  @media (min-width: 1300px) {
+    margin-right: 7%;
+  }
+}
+
+.form__input-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+.form__input-wrapper--checkbox {
+  cursor: pointer;
+  @media (min-width: 768px) {
+    margin-bottom: 30px;
+    width: 45%;
+  }
+  @media (min-width: 1300px) {
+    width: 20%;
+    margin-bottom: 0;
+    margin-right: 6.66666%;
+  }
+}
+.form__input-wrapper--checkbox:active {
+  opacity: 0.3;
+}
+
+.form__input-wrapper--checkbox:last-child {
+  @media (min-width: 768px) {
+    margin-bottom: 30px;
+  }
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+    margin-right: 0;
+  }
+}
+.form__input-wrapper--checkbox:nth-child(2n) {
+  @media (min-width: 768px) and (max-width: 1299px) {
+    margin-right: 10%;
+  }
+}
+
+.form__desc {
+  white-space: nowrap;
+  margin-right: 15px;
+}
+
+.form__desc--radio,
+.form__desc--checkbox {
+  margin-right: 0;
+  margin-left: 15px;
+  @media (min-width: 768px) {
+    margin-left: 20px;
+  }
+}
+
+.form__button-wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 33px;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 72px;
+  }
+  @media (min-width: 1300px) {
+    margin-bottom: 82px;
+  }
+}
+
+.form__submit {
+  display: block;
+  margin-bottom: 22px;
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+    width: 45%;
+    margin-right: 10%;
+  }
+}
+.form__hint {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: none;
+  color: @contentTextColor;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+
+  padding: 0;
+  margin: 0;
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+}

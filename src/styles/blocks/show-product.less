@@ -1,0 +1,88 @@
+.show-product {
+  position: relative;
+
+  padding-top: 80px;
+  padding-bottom: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  border-top: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
+  text-align: center;
+
+  &::before,
+  &::after {
+    content: "";
+
+    position: absolute;
+
+    top: 40px;
+    left: calc(50% - 15px);
+
+    width: 30px;
+    height: 2px;
+    background-color: #d3d3d3;
+    @media (min-width: 768px) {
+      top: 84px;
+      left: calc(50% - 30px);
+
+      width: 60px;
+    }
+  }
+
+  &::before {
+    transform: rotate(90deg);
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    border: 1px solid #ededed;
+
+    margin-top: 120px;
+    margin-bottom: 18px;
+    padding: 40px;
+  }
+}
+
+.show-product__title {
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  font-size: 16px;
+  line-height: 20px;
+
+  margin-top: 0;
+  margin-bottom: 8px;
+
+  @media (min-width: 768px) {
+    font-size: 20px;
+
+    margin-bottom: 28px;
+  }
+}
+
+.show-product__text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+
+  font-size: 12px;
+  line-height: 16px;
+
+  margin-top: 0;
+  margin-bottom: 22px;
+  @media (min-width: 768px) {
+    font-size: 16px;
+    line-height: 18px;
+
+    margin-bottom: 85px;
+  }
+}
+
+.show-product__button {
+  width: 100%;
+}

@@ -1,0 +1,312 @@
+/*
+LESS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: @icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+@icon-home: x y offset_x offset_y width height total_width total_height image_path name;
+
+At the bottom of this section, we provide information about the spritesheet itself
+@spritesheet: width height image @spritesheet-sprites;
+*/
+@clock-name: 'clock';
+@clock-x: 142px;
+@clock-y: 60px;
+@clock-offset-x: -142px;
+@clock-offset-y: -60px;
+@clock-width: 26px;
+@clock-height: 31px;
+@clock-total-width: 191px;
+@clock-total-height: 159px;
+@clock-image: './image/spriteIMG/sprite.png';
+@clock: 142px 60px -142px -60px 26px 31px 191px 159px './image/spriteIMG/sprite.png' 'clock';
+@fork-name: 'fork';
+@fork-x: 168px;
+@fork-y: 0px;
+@fork-offset-x: -168px;
+@fork-offset-y: 0px;
+@fork-width: 23px;
+@fork-height: 30px;
+@fork-total-width: 191px;
+@fork-total-height: 159px;
+@fork-image: './image/spriteIMG/sprite.png';
+@fork: 168px 0px -168px 0px 23px 30px 191px 159px './image/spriteIMG/sprite.png' 'fork';
+@gift-name: 'gift';
+@gift-x: 113px;
+@gift-y: 0px;
+@gift-offset-x: -113px;
+@gift-offset-y: 0px;
+@gift-width: 55px;
+@gift-height: 60px;
+@gift-total-width: 191px;
+@gift-total-height: 159px;
+@gift-image: './image/spriteIMG/sprite.png';
+@gift: 113px 0px -113px 0px 55px 60px 191px 159px './image/spriteIMG/sprite.png' 'gift';
+@leaf-name: 'leaf';
+@leaf-x: 55px;
+@leaf-y: 106px;
+@leaf-offset-x: -55px;
+@leaf-offset-y: -106px;
+@leaf-width: 26px;
+@leaf-height: 29px;
+@leaf-total-width: 191px;
+@leaf-total-height: 159px;
+@leaf-image: './image/spriteIMG/sprite.png';
+@leaf: 55px 106px -55px -106px 26px 29px 191px 159px './image/spriteIMG/sprite.png' 'leaf';
+@map-pin-mobile-name: 'map-pin-mobile';
+@map-pin-mobile-x: 0px;
+@map-pin-mobile-y: 106px;
+@map-pin-mobile-offset-x: 0px;
+@map-pin-mobile-offset-y: -106px;
+@map-pin-mobile-width: 55px;
+@map-pin-mobile-height: 53px;
+@map-pin-mobile-total-width: 191px;
+@map-pin-mobile-total-height: 159px;
+@map-pin-mobile-image: './image/spriteIMG/sprite.png';
+@map-pin-mobile: 0px 106px 0px -106px 55px 53px 191px 159px './image/spriteIMG/sprite.png' 'map-pin-mobile';
+@map-pin-name: 'map-pin';
+@map-pin-x: 0px;
+@map-pin-y: 0px;
+@map-pin-offset-x: 0px;
+@map-pin-offset-y: 0px;
+@map-pin-width: 113px;
+@map-pin-height: 106px;
+@map-pin-total-width: 191px;
+@map-pin-total-height: 159px;
+@map-pin-image: './image/spriteIMG/sprite.png';
+@map-pin: 0px 0px 0px 0px 113px 106px 191px 159px './image/spriteIMG/sprite.png' 'map-pin';
+@powder-name: 'powder';
+@powder-x: 113px;
+@powder-y: 60px;
+@powder-offset-x: -113px;
+@powder-offset-y: -60px;
+@powder-width: 29px;
+@powder-height: 31px;
+@powder-total-width: 191px;
+@powder-total-height: 159px;
+@powder-image: './image/spriteIMG/sprite.png';
+@powder: 113px 60px -113px -60px 29px 31px 191px 159px './image/spriteIMG/sprite.png' 'powder';
+@clock-2x-name: 'clock@2x';
+@clock-2x-x: 284px;
+@clock-2x-y: 120px;
+@clock-2x-offset-x: -284px;
+@clock-2x-offset-y: -120px;
+@clock-2x-width: 52px;
+@clock-2x-height: 62px;
+@clock-2x-total-width: 382px;
+@clock-2x-total-height: 318px;
+@clock-2x-image: './image/spriteIMG/sprite@2x.png';
+@clock-2x: 284px 120px -284px -120px 52px 62px 382px 318px './image/spriteIMG/sprite@2x.png' 'clock@2x';
+@fork-2x-name: 'fork@2x';
+@fork-2x-x: 336px;
+@fork-2x-y: 0px;
+@fork-2x-offset-x: -336px;
+@fork-2x-offset-y: 0px;
+@fork-2x-width: 46px;
+@fork-2x-height: 60px;
+@fork-2x-total-width: 382px;
+@fork-2x-total-height: 318px;
+@fork-2x-image: './image/spriteIMG/sprite@2x.png';
+@fork-2x: 336px 0px -336px 0px 46px 60px 382px 318px './image/spriteIMG/sprite@2x.png' 'fork@2x';
+@gift-2x-name: 'gift@2x';
+@gift-2x-x: 226px;
+@gift-2x-y: 0px;
+@gift-2x-offset-x: -226px;
+@gift-2x-offset-y: 0px;
+@gift-2x-width: 110px;
+@gift-2x-height: 120px;
+@gift-2x-total-width: 382px;
+@gift-2x-total-height: 318px;
+@gift-2x-image: './image/spriteIMG/sprite@2x.png';
+@gift-2x: 226px 0px -226px 0px 110px 120px 382px 318px './image/spriteIMG/sprite@2x.png' 'gift@2x';
+@leaf-2x-name: 'leaf@2x';
+@leaf-2x-x: 110px;
+@leaf-2x-y: 212px;
+@leaf-2x-offset-x: -110px;
+@leaf-2x-offset-y: -212px;
+@leaf-2x-width: 52px;
+@leaf-2x-height: 58px;
+@leaf-2x-total-width: 382px;
+@leaf-2x-total-height: 318px;
+@leaf-2x-image: './image/spriteIMG/sprite@2x.png';
+@leaf-2x: 110px 212px -110px -212px 52px 58px 382px 318px './image/spriteIMG/sprite@2x.png' 'leaf@2x';
+@map-pin-mobile-2x-name: 'map-pin-mobile@2x';
+@map-pin-mobile-2x-x: 0px;
+@map-pin-mobile-2x-y: 212px;
+@map-pin-mobile-2x-offset-x: 0px;
+@map-pin-mobile-2x-offset-y: -212px;
+@map-pin-mobile-2x-width: 110px;
+@map-pin-mobile-2x-height: 106px;
+@map-pin-mobile-2x-total-width: 382px;
+@map-pin-mobile-2x-total-height: 318px;
+@map-pin-mobile-2x-image: './image/spriteIMG/sprite@2x.png';
+@map-pin-mobile-2x: 0px 212px 0px -212px 110px 106px 382px 318px './image/spriteIMG/sprite@2x.png' 'map-pin-mobile@2x';
+@map-pin-2x-name: 'map-pin@2x';
+@map-pin-2x-x: 0px;
+@map-pin-2x-y: 0px;
+@map-pin-2x-offset-x: 0px;
+@map-pin-2x-offset-y: 0px;
+@map-pin-2x-width: 226px;
+@map-pin-2x-height: 212px;
+@map-pin-2x-total-width: 382px;
+@map-pin-2x-total-height: 318px;
+@map-pin-2x-image: './image/spriteIMG/sprite@2x.png';
+@map-pin-2x: 0px 0px 0px 0px 226px 212px 382px 318px './image/spriteIMG/sprite@2x.png' 'map-pin@2x';
+@powder-2x-name: 'powder@2x';
+@powder-2x-x: 226px;
+@powder-2x-y: 120px;
+@powder-2x-offset-x: -226px;
+@powder-2x-offset-y: -120px;
+@powder-2x-width: 58px;
+@powder-2x-height: 62px;
+@powder-2x-total-width: 382px;
+@powder-2x-total-height: 318px;
+@powder-2x-image: './image/spriteIMG/sprite@2x.png';
+@powder-2x: 226px 120px -226px -120px 58px 62px 382px 318px './image/spriteIMG/sprite@2x.png' 'powder@2x';
+@spritesheet-width: 191px;
+@spritesheet-height: 159px;
+@spritesheet-image: './image/spriteIMG/sprite.png';
+@spritesheet-sprites: @clock @fork @gift @leaf @map-pin-mobile @map-pin @powder;
+@spritesheet: 191px 159px './image/spriteIMG/sprite.png' @spritesheet-sprites;
+@retina-spritesheet-width: 382px;
+@retina-spritesheet-height: 318px;
+@retina-spritesheet-image: './image/spriteIMG/sprite@2x.png';
+@retina-spritesheet-sprites: @clock-2x @fork-2x @gift-2x @leaf-2x @map-pin-mobile-2x @map-pin-2x @powder-2x;
+@retina-spritesheet: 382px 318px './image/spriteIMG/sprite@2x.png' @retina-spritesheet-sprites;
+
+/*
+These "retina group" variables are mappings for the naming and pairing of normal and retina sprites.
+
+The list formatted variables are intended for mixins like `retina-sprite` and `retina-sprites`.
+*/
+@clock-group-name: 'clock';
+@clock-group: 'clock' @clock @clock-2x;
+@fork-group-name: 'fork';
+@fork-group: 'fork' @fork @fork-2x;
+@gift-group-name: 'gift';
+@gift-group: 'gift' @gift @gift-2x;
+@leaf-group-name: 'leaf';
+@leaf-group: 'leaf' @leaf @leaf-2x;
+@map-pin-mobile-group-name: 'map-pin-mobile';
+@map-pin-mobile-group: 'map-pin-mobile' @map-pin-mobile @map-pin-mobile-2x;
+@map-pin-group-name: 'map-pin';
+@map-pin-group: 'map-pin' @map-pin @map-pin-2x;
+@powder-group-name: 'powder';
+@powder-group: 'powder' @powder @powder-2x;
+@retina-groups: @clock-group @fork-group @gift-group @leaf-group @map-pin-mobile-group @map-pin-group @powder-group;
+
+/*
+The provided classes are intended to be used with the array-like variables
+
+.icon-home {
+  .sprite-width(@icon-home);
+}
+.icon-email {
+  .sprite(@icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.sprite-width(@sprite) {
+  width: extract(@sprite, 5);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 6);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 3);
+  @sprite-offset-y: extract(@sprite, 4);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite-image(@sprite) {
+  @sprite-image: extract(@sprite, 9);
+  background-image: e(%('url(%a)', e(@sprite-image)));
+}
+
+.sprite(@sprite) {
+  .sprite-image(@sprite);
+  .sprite-position(@sprite);
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+/*
+The `retina-sprite` class sets up rules and a media query for a sprite/retina sprite.
+  It should be used with a "retina group" variable.
+
+The media query is from CSS Tricks: https://css-tricks.com/snippets/css/retina-display-media-query/
+
+@icon-home-group: 'icon-home' @icon-home @icon-home-2x;
+
+.icon-home {
+  .retina-sprite(@icon-home-group);
+}
+*/
+.sprite-background-size(@sprite) {
+  @sprite-total-width: extract(@sprite, 7);
+  @sprite-total-height: extract(@sprite, 8);
+  background-size: @sprite-total-width @sprite-total-height;
+}
+
+.retina-sprite(@retina-group) {
+  @normal-sprite: extract(@retina-group, 2);
+  @retina-sprite: extract(@retina-group, 3);
+  .sprite(@normal-sprite);
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+         (min-resolution: 192dpi) {
+    .sprite-image(@retina-sprite);
+    .sprite-background-size(@normal-sprite);
+  }
+}
+
+/*
+The `.sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of LESS
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+.sprites(@spritesheet-sprites);
+*/
+.sprites(@sprites, @i: 1) when (@i <= length(@sprites)) {
+  @sprite: extract(@sprites, @i);
+  @sprite-name: e(extract(@sprite, 10));
+  .@{sprite-name} {
+    .sprite(@sprite);
+  }
+  .sprites(@sprites, @i + 1);
+}
+
+/*
+The `.retina-sprites` mixin generates a CSS rule and media query for retina groups
+  This yields the same output as CSS retina template but can be overridden in LESS
+
+.retina-sprites(@retina-groups);
+*/
+.retina-sprites(@retina-groups, @i: 1) when (@i <= length(@retina-groups)) {
+  @retina-group: extract(@retina-groups, @i);
+  @sprite-name: e(extract(@retina-group, 1));
+  .@{sprite-name} {
+    .retina-sprite(@retina-group);
+  }
+  .retina-sprites(@retina-groups, @i + 1);
+}

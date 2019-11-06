@@ -1,0 +1,123 @@
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  border-top: 1px solid #ededed;
+  @media (min-width: 768px) {
+    padding: 40px 0;
+    margin-bottom: 18px;
+
+    flex-direction: column;
+    justify-content: flex-end;
+
+    border-top: none;
+    background-image: linear-gradient(
+      to bottom,
+      @mainBackgroundColor 120px,
+      @secondaryBackgroundColor 120px
+    );
+  }
+}
+
+.product__image-wrapper {
+  width: 50%;
+  text-align: center;
+  @media (min-width: 768px) {
+    width: 100%;
+  }
+}
+
+.product__image {
+  width: 140px;
+}
+
+.product__image--small {
+  @media (min-width: 768px) {
+    width: 161px;
+  }
+}
+
+.product__image--large {
+  @media (min-width: 768px) {
+    width: 195px;
+  }
+}
+
+.product__container {
+  width: 50%;
+  @media (min-width: 768px) {
+    width: 100%;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+.product__button {
+  width: 100%;
+}
+
+.product__name {
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: left;
+
+  font-size: 16px;
+  line-height: 20px;
+
+  margin-top: 20px;
+  margin-bottom: 12px;
+  padding-right: 40%;
+  @media (min-width: 768px) {
+    padding: 0 22%;
+    margin-top: 50px;
+    margin-bottom: 25px;
+
+    text-align: center;
+    font-size: 20px;
+  }
+  @media (min-width: 1300px) {
+    padding: 0 10%;
+  }
+}
+
+.product__desc {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+
+  font-size: 12px;
+  line-height: 16px;
+  color: @contentTextColor;
+
+  width: 100%;
+
+  border-collapse: collapse;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+    margin-bottom: 33px;
+  }
+}
+
+.product__row {
+  @media (min-width: 768px) {
+    border-bottom: 1px solid #cdcdcd;
+  }
+}
+
+.product__feature {
+  text-align: left;
+  @media (min-width: 768px) {
+    padding: 7px 0;
+  }
+}
+
+.product__value {
+  text-align: right;
+  @media (min-width: 768px) {
+    padding: 7px 0;
+  }
+}
