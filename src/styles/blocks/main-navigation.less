@@ -11,7 +11,7 @@
   }
   @media (min-width: 1300px) {
     min-height: 167px;
-    height: 167px; // в IE 11 не работает min-height с Flex. Пришлось явно устанавливать и убирать высоту 
+    height: 167px; // в IE 11 не работает min-height с Flex. Пришлось явно устанавливать и убирать высоту
 
     @supports (display: initial) {
       height: auto;
@@ -91,6 +91,11 @@
     font-size: 20px;
   }
 }
+@media (max-width: 767px) {
+  .close .main-navigation__list {
+    display: none;
+  }
+}
 
 .main-navigation__item {
   border-top: 1px solid #444444;
@@ -154,9 +159,6 @@
     color: @secondaryTitleTextColor;
   }
 }
-
-// .main-navigation__link--selection {
-// }
 
 .main-navigation__toggler {
   position: absolute;

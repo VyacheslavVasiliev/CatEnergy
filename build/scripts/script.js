@@ -22,6 +22,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 ;
 
 (function () {
+  var toggleContainer = document.querySelector(".main-navigation");
+  var toggler = document.querySelector(".toggler");
+
+  function toggleMenu() {
+    toggleContainer.classList.toggle("close");
+  }
+
+  ;
+  toggleMenu(); // закрывает выпадающее меню при загрузки JS файла (доступность контента при отключенном js);
+
+  toggler.addEventListener("click", toggleMenu);
+})();
+
+;
+
+(function () {
   var CreateHorizontalSlider =
   /*#__PURE__*/
   function () {
@@ -329,14 +345,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 (function () {
   var viewportWidth = document.documentElement.clientWidth;
+  var buttonBefore = document.querySelector(".slider__button--before");
 
-  if (viewportWidth <= 768) {
-    var buttonBefore = document.querySelector(".slider__button--before");
+  if (viewportWidth <= 768 && buttonBefore) {
+    var _buttonBefore = document.querySelector(".slider__button--before");
+
     var buttonAfter = document.querySelector(".slider__button--after");
     var representation = document.querySelector(".representation");
-    buttonBefore.addEventListener("click", function () {
+
+    _buttonBefore.addEventListener("click", function () {
       representation.classList.remove("representation__show--after");
     });
+
     buttonAfter.addEventListener("click", function () {
       representation.classList.add("representation__show--after");
     });
@@ -347,11 +367,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 (function () {
   var viewportWidth = document.documentElement.clientWidth;
+  var body = document.querySelector(".silder__body");
 
-  if (viewportWidth >= 768) {
+  if (viewportWidth >= 768 && body) {
     var _window2 = window,
         ButtonsHorizontalSlider = _window2.ButtonsHorizontalSlider;
-    var body = document.querySelector(".silder__body");
     var lever = document.querySelector(".slider__lever");
     var buttonBefore = document.querySelector(".slider__button--before");
     var buttonAfter = document.querySelector(".slider__button--after");
@@ -366,17 +386,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 (function () {
   var viewportWidth = document.documentElement.clientWidth;
+  var cutImgBeforeWrapper = document.querySelector(".representation__cut--before");
 
-  if (viewportWidth >= 768) {
+  if (viewportWidth >= 768 && cutImgBeforeWrapper) {
     var _window3 = window,
         slider = _window3.slider,
         CutImage = _window3.CutImage;
-    var cutImgBeforeWrapper = document.querySelector(".representation__cut--before");
+
+    var _cutImgBeforeWrapper = document.querySelector(".representation__cut--before");
+
     var imgBefore = document.querySelector(".representation__image--before");
     var cutImgAfterWrapper = document.querySelector(".representation__cut--after");
     var imgAfter = document.querySelector(".representation__image--after");
     var cutImg = new CutImage();
-    cutImg.setImgLeft(cutImgBeforeWrapper, imgBefore);
+    cutImg.setImgLeft(_cutImgBeforeWrapper, imgBefore);
     cutImg.setImgRight(cutImgAfterWrapper, imgAfter);
     slider.addShiftProcentListener(function (proc) {
       return cutImg.cutImgLeft(proc);

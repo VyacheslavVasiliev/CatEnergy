@@ -1,6 +1,19 @@
 // Мне лень создавать несколько js файлов и париться со сброщиком
 
 ;(()=>{
+  const toggleContainer = document.querySelector(".main-navigation");
+  const toggler = document.querySelector(".toggler");
+
+  function toggleMenu(){
+    toggleContainer.classList.toggle("close");
+  };
+  
+  toggleMenu(); // закрывает выпадающее меню при загрузки JS файла (доступность контента при отключенном js);
+
+  toggler.addEventListener("click", toggleMenu);
+})();
+
+;(()=>{
   class CreateHorizontalSlider {
     constructor(body, lever) {
       this._body = body;
@@ -230,7 +243,9 @@
 ;(()=>{
   const viewportWidth = document.documentElement.clientWidth;
 
-  if(viewportWidth <= 768){
+  const buttonBefore = document.querySelector(".slider__button--before");
+
+  if(viewportWidth <= 768 && buttonBefore){
     const buttonBefore = document.querySelector(".slider__button--before");
     const buttonAfter = document.querySelector(".slider__button--after");
     const representation = document.querySelector(".representation");
@@ -247,11 +262,11 @@
 
 ;(()=>{
   const viewportWidth = document.documentElement.clientWidth;
+  const body = document.querySelector(".silder__body");
 
-  if(viewportWidth >= 768){
+  if(viewportWidth >= 768 && body){
     const {ButtonsHorizontalSlider} = window;
 
-    const body = document.querySelector(".silder__body");
     const lever = document.querySelector(".slider__lever");
     const buttonBefore = document.querySelector(".slider__button--before");
     const buttonAfter = document.querySelector(".slider__button--after");
@@ -266,8 +281,9 @@
 
 ;(()=>{
   const viewportWidth = document.documentElement.clientWidth;
+  const cutImgBeforeWrapper = document.querySelector(".representation__cut--before");
 
-  if(viewportWidth >= 768){
+  if(viewportWidth >= 768 && cutImgBeforeWrapper){
     const {slider, CutImage} = window;
 
     const cutImgBeforeWrapper = document.querySelector(".representation__cut--before");
